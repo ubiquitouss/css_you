@@ -1,0 +1,25 @@
+#div-1 {
+  display: block; /*default*/
+  /* 'block'- it will take the entire space given to it */
+  /* takes the entire height and width */
+  background-color: red;
+}
+#span-1 {
+  display: inline; /*default*/
+  /* inline means they share the space with others */
+  /* they stay all in the same line */
+  background-color: cyan;
+}
+#span-2 {
+  background-color: purple;
+}
+#div-2 {
+  background-color: green;
+}
+#img {
+  display: inline-block;
+  /* this behaves exactly like the inline element */
+  /* but we can set height and width with it */
+  height: 50px;
+  width: 50px;
+}

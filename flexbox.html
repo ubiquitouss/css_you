@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="flexbox.css" />
+
+    <style>
+        /*when we will think about the device like phone , tablet ,pc .. we will use this format*/
+        /*this will help us to use things like bootstrap*/
+        /*after certain pixels the screen will behave differently*/
+
+        @media (min-width: 768px) {
+
+            .container-1 {
+              display: flex;
+              /*align-items: stretch;*/
+              /* this will put all the boxes side by side in line */
+              /*'align-items: flex-start' make the box one height shorter because box one has less content*/
+              /*'align-items: flex-end' make the box one height shorter and moves it down */
+              /*'align-items: stretch* - by default*/
+              /* to make the horizontal flex-box to vertical*/
+              /*flex-direction: column;*/
+            }
+        }
+
+      .container-2{
+          display: flex;
+          /*justify-content: flex-start;*/
+          /*this is the default here*/
+          /*but this will keep another 40% space empty on the right hand side*/
+          /*justify-content: flex-end;*/
+          /*this will move item on the right hand side*/
+          /*justify-content: space-around;*/
+          justify-content: space-around;
+      }
+
+      .container-3 {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+
+      }
+      .container-1 div, .container-2 div , .container-3 div {
+        border: 1px #ccc solid;
+        padding: 10px;
+      }
+
+      .box-1 {
+        flex: 2;
+        order: 2;
+        <!-- ! if all are the flex:1 then every box will take the same space in line -->
+        <!-- ! the higher the flex number the more space it takes in the column -->
+        <!-- ! order is to fix the position of the box -->
+        <!-- ! here box one will go to the second position -->
+      }
+      .box-2 {
+        flex: 1;
+        order: 1;
+      }
+      .box-3 {
+        flex: 1;
+        order: 3;
+
+      }
+
+      .container-2-box{
+          /*width : 27%;*/
+          /*this also works but to do it in felxi style*/
+          flex-basis: 27%;
+          /*this works just like the 'width' property*/
+      }
+
+      .container-3-box {
+          flex-basis: 15%;
+          flex-grow: 2;
+          /*if we set every item with flex-grow, this will divide every item with same width*/
+          /*if we want to set one of them a little bit biggger,*/
+          /* what we have to do is */
+          /* flex-grow: 3 or 4*/
+          /*larger the number the larger it becomes that the previous one*/
+
+          flex-shrink: 0;
+          /* if we set to 0 every item will be shrinked when we shrink the window*/
+          /* but this item will not shrink at all*
+          /*this item will remain the same, eventhough we shrink the  screen size*/
+          /* and vice and versa*/
+
+          /*now if we want to write all in just one line */
+          /*the structure will be like this*/
+          /*flex: grow shrink basis*/
+          /*flex: 2 0 100px*/
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-1">
+      <div class="box-1">
+        <h3>Box One</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi dolorum,
+          saepe voluptatibus temporibus veritatis fuga suscipit nostrum
+        </p>
+      </div>
+      <div class="box-2">
+        <h3>Box Two</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi dolorum,
+          saepe voluptatibus temporibus veritatis fuga suscipit nostrum
+          eligendi, corrupti alias magni vitae repudiandae harum molestias
+          architecto in voluptas vel odit.
+        </p>
+      </div>
+      <div class="box-3">
+        <h3>Box Three</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi dolorum,
+          saepe voluptatibus temporibus veritatis fuga suscipit nostrum
+          eligendi, corrupti alias magni vitae repudiandae harum molestias
+          architecto in voluptas vel odit.
+        </p>
+      </div>
+    </div>
+
+    <div class="container-2">
+      <div class="container-2-box">
+        <h3>Box Four</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi dolorum,
+          saepe voluptatibus temporibus veritatis fuga suscipit nostrum
+        </p>
+      </div>
+      <div class="container-2-box">
+        <h3>Box Five</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi dolorum,
+          saepe voluptatibus temporibus veritatis fuga suscipit nostrum
+          eligendi, corrupti alias magni vitae repudiandae harum molestias
+          architecto in voluptas vel odit.
+        </p>
+      </div>
+      <div class="container-2-box">
+        <h3>Box Six</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi dolorum,
+          saepe voluptatibus temporibus veritatis fuga suscipit nostrum
+          eligendi, corrupti alias magni vitae repudiandae harum molestias
+          architecto in voluptas vel odit.
+        </p>
+      </div>
+    </div>
+
+    <div class="container-3">
+      <div class="container-3-box">
+        <h3>Box Seven</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi dolorum,
+          saepe voluptatibus temporibus veritatis fuga suscipit nostrum
+        </p>
+      </div>
+      <div class="container-3-box">
+        <h3>Box Eight</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi dolorum,
+          saepe voluptatibus temporibus veritatis fuga suscipit nostrum
+          eligendi, corrupti alias magni vitae repudiandae harum molestias
+          architecto in voluptas vel odit.
+        </p>
+      </div>
+      <div class="container-3-box">
+        <h3>Box Nine</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi dolorum,
+          saepe voluptatibus temporibus veritatis fuga suscipit nostrum
+          eligendi, corrupti alias magni vitae repudiandae harum molestias
+          architecto in voluptas vel odit.
+        </p>
+      </div>
+      <div class="container-3-box">
+        <h3>Box Ten</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi dolorum,
+          saepe voluptatibus temporibus veritatis fuga suscipit nostrum
+          eligendi, corrupti alias magni vitae repudiandae harum molestias
+          architecto in voluptas vel odit.
+        </p>
+      </div>
+      <div class="container-3-box">
+        <h3>Box Eleven</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi dolorum,
+          saepe voluptatibus temporibus veritatis fuga suscipit nostrum
+          eligendi, corrupti alias magni vitae repudiandae harum molestias
+          architecto in voluptas vel odit.
+        </p>
+      </div>
+      <div class="container-3-box">
+        <h3>Box Twelve</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi dolorum,
+          saepe voluptatibus temporibus veritatis fuga suscipit nostrum
+          eligendi, corrupti alias magni vitae repudiandae harum molestias
+          architecto in voluptas vel odit.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

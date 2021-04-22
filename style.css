@@ -1,0 +1,155 @@
+body {
+  background: rgba(204, 229, 225);
+  /* background: url("") */
+  /* background-image: url(""); */
+}
+
+.title {
+  color: blue;
+  /* for texts */
+}
+
+/* pseudo selectors */
+h2:hover {
+  color: green;
+}
+
+li:last-child {
+  color: steelblue;
+}
+
+li:nth-child(2) {
+  color: green;
+}
+
+li:only-child {
+  color: yellow;
+  /* if any li is only one child */
+}
+
+/* #google-link:link {
+  color: orange;
+}
+
+#google-link:visited {
+  color: cyan;
+} */
+
+h3 + a {
+  color: purple;
+}
+
+textarea ~ button {
+  /* every textarea foloowing button  but under same parent*/
+  color: purple;
+}
+
+ul > li {
+  /* every li inside a ul */
+
+  color: blue;
+}
+
+ul li {
+  color: yellow;
+  /* all li under ul. even if the li has another parent under ul */
+}
+
+/* attribute selector */
+
+/* h1[attr=value]{
+  color: violet;
+} */
+/* example */
+h1[class="subtitle"] {
+  color: violet;
+}
+
+img[src^="img.jpg"] {
+  /* src^ ='img' */
+  /* !starts with img */
+  /* src$ = 'img */
+  /* ! ends wiht img */
+  width: 500px;
+  height: 120px;
+}
+
+h2[class~="subtitle"] {
+  /* an h2 with a class 'subtitle' */
+  background-color: green;
+}
+
+.url-img {
+  background: url("https://images.pexels.com/photos/1903702/pexels-photo-1903702.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+  /* background-image: ; */
+  background-repeat: repeat;
+  background-size: 250px 150px
+    /* /cover - but it decreases the quality of the picture */
+    /*/contain -  it keeps the exact ration possible. but it repeats the images*/;
+
+  /* if background is the full size */
+  /* then background-size is the size where the images take how much space do it needs inside the background */
+  width: 1280px;
+  height: 720px;
+}
+
+.linear-gradient {
+  width: 320px;
+  height: 180px;
+  /* background: linear-gradient(to right, green, blue, yellow, orangered); b
+  background: linear-gradient(to bottom right, green, blue, yellow, orangered); */
+  background: linear-gradient(245deg, green, blue, yellow, orangered);
+}
+
+.radial-gradient {
+  width: 320px;
+  height: 180px;
+  /* background: radial-gradient(red 10%, green 90%); */
+  background: radial-gradient(circle, red 10%, green 90%);
+}
+
+/*! 'em' will double the size of the standard font size  */
+/* !'vh' viewport height is 1% height of the total height of the viewport */
+/* ! 'px' we all know what px is
+/* ! 'pt' pt is a little bigger than px */
+/* ! 1 pc = 12 'pt' */
+/* ! 'em' =  double of the standard font size */
+
+.text-1 {
+  text-decoration: none;
+  /* no text decoration will work while it's none */
+  /* !'underline' - the underline under the text like a link */
+  /* !'line-through' -  */
+  /* ! 'overline' - the line over the top */
+
+  text-transform: uppercase;
+  text-align: center;
+}
+.text-2 {
+  font-size: 1.25em;
+  font-weight: 300;
+  font-style: italic;
+  /* ! 'oblique' - just like the italic */
+  font-family: "Times New Roman", sans-serif;
+}
+
+.box-img {
+  height: 300px;
+  width: 150px;
+  border: 5px solid rgba(204, 229, 255);
+  padding: 100px, 40px, 5px, 0;
+  /* ! the space between the content and the border */
+  /* ! see the box-model.jpg for details */
+  /* ! padding-right: ; */
+  /* ! pading-left */
+  margin: 40px;
+  /* ! the last outer part of the content */
+  /* ! see the box-model.jpg for details */
+  /* !  */
+  float: right;
+}
+
+.display-text {
+  display: none;
+  /* ! hides the content */
+}

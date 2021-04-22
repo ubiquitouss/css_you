@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Css grid</title>
+
+    <style>
+      .wrapper {
+        display: grid;
+        /*grid-template-columns: 70% 30%;*/
+        /*one column will take the 70%  of the space. other one will take the 30%*/
+        /*no matter how many divs it has. it will follow the 70% 30% rules*/
+        grid-template-columns: 40% 30% 30%;
+        /*grid-column-gap: 1em;*/
+        /* it will make gap inside the columns*/
+        /*grid-row-gap: 1em;*/
+        /* you can understand what's going on*/
+        /* to do this both together*/
+        grid-gap: 1em;
+      }
+      .wrapper > div {
+        background: #eee;
+        padding: 1em;
+      }
+      .wrapper > div:nth-child(odd) {
+        background: #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque neque
+        modi dolorum maxime similique minima at exercitationem, illo repudiandae
+        recusandae nam iste, perferendis nihil id hic. Fugiat ratione
+        perferendis minima!
+      </div>
+
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque eius
+        itaque explicabo reiciendis exercitationem aliquid harum, nobis,
+        molestiae non illum quasi animi rerum officiis consequatur nemo esse nam
+        optio magnam.
+      </div>
+
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque neque
+        modi dolorum maxime similique minima at exercitationem, illo repudiandae
+        recusandae nam iste, perferendis nihil id hic. Fugiat ratione
+        perferendis minima!
+      </div>
+
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque eius
+        itaque explicabo reiciendis exercitationem aliquid harum, nobis,
+        molestiae non illum quasi animi rerum officiis consequatur nemo esse nam
+        optio magnam.
+      </div>
+      <div>hello</div>
+    </div>
+  </body>
+</html>

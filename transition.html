@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .btn {
+        color: green;
+        height: 50px;
+        opacity: 0.5;
+        border: #333 5px solid;
+        border-radius: 50px;
+        font-weight: 400;
+        font-family: sans-serif;
+        background: orange;
+        transition: all 500ms ease;
+        -webkit-transition: all 500ms ease;
+        -moz-transition: all 500ms ease;
+        -o-transition: all 500ms ease;
+        /*ease, linear,ease-in-out*/
+        transform: scale(2.5) translate(100px, 100px) skewX(45deg);
+        /*'scale' is to make the item bigger or smaller*/
+        /*'translate' is to make it  move to a direction*/
+        /*'skew' is to make it curved*/
+        /*transform: matrix(big, skewy,skewx,scale,translatex,translatey);*/
+        /*example*/
+        /*transform: matrix(1, 0.45,0.45,1,10,50)*/
+        /*1= 1times bigger, 0.45 = 45deg, 1= scale, 10px, 50px for translate*/
+      }
+      .btn:hover {
+        background: radial-gradient(violet, magenta);
+        padding: 25px;
+        color: white;
+        text-align: center;
+        /*transform: translate(100px, 200px);*/
+        transform: rotate(-45deg);
+      }
+      .text {
+        animation-name: red-to-black;
+        /*animation-duration: 4s;*/
+        /*animation-timing-function: linear;*/
+        /*animation-delay: -2s;*/
+        /*how much will it be delayed*/
+        /*animation-iteration-count: 2;*/
+        /*how many times animation wwill happen*/
+        /*animation-iteration-count: infinite;*/
+        /*the animation will go over and over*/
+        /*animation-direction: normal;*/
+        /*the animaion will remain as it is*/
+        /*animation-direction: reverse;*/
+        /*animation-direction: alternate*/
+        /*this means the animation will go forward and then backward*/
+        /*animation-direction: alternate-reverse*/
+
+        /*we can do this all in a single line*/
+        -webkit-animation: red-to-black 4s linear -2s infinite alternate-reverse;
+        -moz-animation: red-to-black 4s linear -2s infinite alternate-reverse;
+        -ms-animation: red-to-black 4s linear -2s infinite alternate-reverse;
+        -o-animation: red-to-black 4s linear -2s infinite alternate-reverse;
+      }
+      @keyframes red-to-black {
+        0% {
+          background: red;
+          transform: translate(0px, 0px);
+        }
+        50% {
+          background: yellow;
+          transform: translate(10px, 10px);
+        }
+        100% {
+          background: blue;
+          transform: translate(20px, 20px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn">i have lot's to say</button>
+    <h2 class="text">these are some texts</h2>
+  </body>
+</html>

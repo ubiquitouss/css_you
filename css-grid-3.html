@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Css grid 2</title>
+    <style>
+      .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: minmax(100px, auto);
+        grid-gap: 1em;
+        /*justify-items: start;*/
+        /*this will align the items at the start of the column*/
+        /*justify-items: end/center/stetch 'strech' is default*/
+        /* this will work left to right means horizontally*/
+        /*for all items*/
+        justify-items: stetch;
+
+        /*align-items: start;*/
+        /*this will work just like the justify-items*/
+        /*just top to bottom, means vertically*/
+        align-items: stretch;
+      }
+
+      .wrapper > div {
+        background: #eee;
+        padding: 1em;
+      }
+      .wrapper > div:nth-child(odd) {
+        background: #ddd;
+      }
+
+      .box1 {
+        /*align-self: start;*/
+        /*this will work just like before but only for the current content. not with all of them*/
+        /* for individual items*/
+        grid-column: 1/3;
+        /*see the grid-2.jpg for better understanding*/
+        /*its sayingg that the column will be 1 to 3 (see the image grid2.jpg)*/
+        grid-row: 1/3;
+        /*see the grid-2.jpg for better understanding*/
+        /*its sayingg that the row will be 1 to 3 (see the image grid2.jpg)*/
+      }
+      .box2 {
+        /*align-self: end;*/
+        grid-column: 3;
+        grid-row: 1/3;
+        /*grid-row: 1/ span 2*/
+        /* this is exactly like the same but*/
+        /* what this means is  you shart at 1*/
+        /*and take another 2 rows*/
+        /*because it's hard to unserstand where we actually began*/
+        /* in 'span' , it's not important where it starts*/
+        /* in 'span', whereever it starts, it will take another 2 columns*/
+      }
+      .box3 {
+        /*justify-self: end;*/
+        grid-column: 2/4;
+        grid-row: 3;
+      }
+      .box4 {
+        grid-column: 1;
+        grid-row: 1/4;
+        border: 1px #333 solid;
+        /*we can over-lap things in grid box*/
+        /* but we can't overlap in flex box*/
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="box box1">box-1</div>
+      <div class="box box2">box-2</div>
+      <div class="box box3">box-3</div>
+      <div class="box box4">box-4</div>
+    </div>
+  </body>
+</html>
